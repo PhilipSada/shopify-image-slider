@@ -1,0 +1,146 @@
+.image-slider {
+  margin: 40px 0;
+}
+.image-slider-heading-text {
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  line-height: 58.09px;
+  padding: 0 10px;
+}
+
+
+@media (max-width: 1024px) {
+  .image-slider-heading-text {
+    font-size: 32px; /* For tablets (<= 1024px) */
+    line-height: 40px; /* Optional: Adjust line-height */
+  }
+}
+
+@media (max-width: 640px) {
+  .image-slider-heading-text {
+    font-size: 24px; /* For mobile devices (<= 640px) */
+    line-height: 32px; /* Optional: Adjust line-height */
+  }
+}
+
+.swiper-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 50px 5px; */
+  position: relative;
+}
+.swiper-slide {
+  position: relative;
+  width: 384px;
+  margin-right: 20px;
+}
+
+
+.image-slider__image {
+  width: 100%;
+  /* width: 384px; */
+  height: 448px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.image-slider__meta {
+  position: absolute;
+  background: linear-gradient(
+    186.07deg,
+    rgba(75, 75, 75, 0.02) 16.81%,
+    rgba(12, 12, 12, 0.8) 54.28%
+  );
+  width: 100%;
+  height: 171px;
+  top: 277px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.image-slider__meta-title, .image-slider__meta-description {
+    padding-left:24px;
+    padding-right: 24px;
+} 
+.image-slider__meta-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 12px;
+}
+
+.image-slider__meta-description {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 24px;
+  padding-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom styles for Swiper navigation and pagination */
+.swiper-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 3px;
+}
+
+/* Style the Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  display: block !important;
+  position: static; /* Override the default position: absolute */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px; /* Adjust width */
+  height: 30px; /* Adjust height */
+  cursor: pointer;
+}
+
+/* Custom PNG for arrows */
+.swiper-button-next {
+  background-image: url("next-arrow.png");
+}
+
+.swiper-button-prev {
+  background-image: url("prev-arrow.png");
+}
+
+/* Style for the pagination dots */
+.swiper-pagination-bullet {
+  background-color: #ccc; /* Default color for pagination dots */
+  opacity: 1; /* Ensure the bullets are fully visible */
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto;
+}
+/* Change the active dot color to black */
+.swiper-pagination-bullet-active {
+  background-color: #000; /* Black color for the active pagination dot */
+}
+/* Remove default content */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: ""; /* Prevents default icon from showing */
+}
