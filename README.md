@@ -3,5 +3,5 @@ This is a shopify dawn theme with an image slider section added. The slider uses
 
 ## Setup
 1. Upload this dawn theme
-2. In the theme customizer, click on add section and 
+2. In the theme customizer, click on add section
 3. Search for 'image slider' and click on it
