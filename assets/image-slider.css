@@ -29,13 +29,20 @@
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
-  /* padding: 50px 5px; */
   position: relative;
 }
 .swiper-slide {
   position: relative;
-  width: 384px;
-  margin-right: 20px;
+  max-width: 384px;
+  margin-right: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .swiper-slide {
+    width: 100% !important; /* Adjust slide width for mobile */
+  }
 }
 
 

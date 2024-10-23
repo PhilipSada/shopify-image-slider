@@ -66,14 +66,41 @@
   </div>
 </section>
 
-<script>
-   window.swiperSettings = {
-    enableAutoplay: {{ section.settings.enable_autoplay | json }},
-    autoplayDelay: {{ section.settings.autoplay_delay | json }}
-  };
-</script>
+
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'image-slider.js' | asset_url }}" defer="defer"></script>
+<script>
+
+  window.addEventListener('DOMContentLoaded', function(){
+  function initializeSwiper(){
+    
+    const swiperOptions = {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      slidesPerView: 'auto'
+    };
+
+    // Apply autoplay setting
+    {% if section.settings.enable_autoplay %}
+      swiperOptions.autoplay = {
+        delay: {{ section.settings.autoplay_delay }},
+        disableOnInteraction: false
+      };
+    {% endif %}
+
+    const swiper = new Swiper('.swiper-container', swiperOptions);
+  };
+
+  initializeSwiper();
+
+  });
+
+</script>
 
 
 {% schema %}
@@ -86,12 +113,13 @@
         "label": "Slider heading",
         "default": "Wunderschön - Ergebnisse unserer Kunden"
       },
-       {
+      {
         "type": "checkbox",
         "id": "enable_autoplay",
         "label": "Enable Autoplay",
         "default": false
-      }, {
+      },  
+      {
         "type": "range",
         "id": "autoplay_delay",
         "label": "Autoplay Delay (ms)",
